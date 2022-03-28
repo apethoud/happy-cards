@@ -14,3 +14,18 @@ body {
   font-size: 24px;
   font-weight: bold;
 }
+
+// Home
+
+.Home-HeroSection {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    padding: 6px;
+    background-color: darkturquoise;
+  }
+}
