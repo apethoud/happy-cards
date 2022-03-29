@@ -17,6 +17,12 @@ body {
 
 // Home
 
+.Home-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .Home-HeroSection {
   height: 200px;
   display: flex;
@@ -28,4 +34,35 @@ body {
     padding: 6px;
     background-color: darkturquoise;
   }
+}
+
+.Home-HighlightsSection {
+  display: flex;
+  justify-content: space-around;
+  width: 60vw;
+}
+
+// HighlightCard
+
+.HighlightCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 4px 8px #ddd;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  width: 15vw;
+  padding: 20px;
+}
+
+.HighlightCard-Icon {
+}
+
+.HighlightCard-Header {
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.HighlightCard-Subtext {
 }
