@@ -1,4 +1,9 @@
 import HighlightCard from "./HighlightCard";
+import {
+  faCalendarDays,
+  faObjectGroup,
+  faPaperPlane,
+} from "@fortawesome/free-regular-svg-icons";
 
 export default function Home() {
   return (
@@ -12,17 +17,17 @@ export default function Home() {
       </div>
       <div className="Home-HighlightsSection">
         <HighlightCard
-          icon=""
+          icon={faCalendarDays}
           header="Select a Holiday"
           subtext="Choose from 500+ holidays, the most of any e-card maker."
         />
         <HighlightCard
-          icon=""
+          icon={faObjectGroup}
           header="Pick a Design"
           subtext="Explore hundreds of amazing designs curated by our expert designers."
         />
         <HighlightCard
-          icon=""
+          icon={faPaperPlane}
           header="Let Us Deliver It"
           subtext="We'll automatically send it to your loved one on a date you select."
         />
