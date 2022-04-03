@@ -3,6 +3,7 @@ import HolidayPickerModal from "./HolidayPickerModal";
 
 export default function HolidayPicker() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedMonth, setSelectedMonth] = useState("March");
   const [selectedHolidayName, setSelectedHolidayName] = useState("");
   return (
     <>
@@ -20,6 +21,7 @@ export default function HolidayPicker() {
       <HolidayPickerModal
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
+        selectedMonth={selectedMonth}
       />
     </>
   );
