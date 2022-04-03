@@ -22,12 +22,13 @@ export default function HolidayPickerModal({
     }
     getHolidays();
   }, [selectedMonth]);
+
   return (
     <ReactModal isOpen={isModalOpen}>
       <div>Pick a Holiday:</div>
       {holidayList.length > 0 &&
-        holidayList.map((holiday) => (
-          <div>
+        holidayList.map((holiday, index) => (
+          <div key={index}>
             {holiday.date}: {holiday.name}
           </div>
         ))}
