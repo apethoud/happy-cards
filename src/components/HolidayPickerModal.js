@@ -23,6 +23,10 @@ export default function HolidayPickerModal({
     getHolidays();
   }, [selectedMonth]);
 
+  useEffect(() => {
+    ReactModal.setAppElement("body");
+  }, []);
+
   return (
     <ReactModal isOpen={isModalOpen}>
       <div>Pick a Holiday:</div>
