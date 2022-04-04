@@ -73,3 +73,19 @@ body {
 .HighlightCard-Subtext {
   color: #333;
 }
+
+// Modal
+
+.Modal-TitleBar {
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  border-bottom: 4px solid darkturquoise;
+}
+
+.Modal-TableRow {
+  padding: 16px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}

@@ -23,6 +23,7 @@ export default function HolidayPicker() {
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
         selectedMonth={selectedMonth}
+        setSelectedHolidayName={setSelectedHolidayName}
       />
     </>
   );

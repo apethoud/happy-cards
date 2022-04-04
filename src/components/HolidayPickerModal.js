@@ -15,6 +15,7 @@ const modalStyles = {
     width: 800,
     height: 600,
     inset: 0,
+    padding: 0,
   },
 };
 
@@ -22,6 +23,7 @@ export default function HolidayPickerModal({
   isModalOpen,
   setIsModalOpen,
   selectedMonth,
+  setSelectedHolidayName,
 }) {
   const [holidayList, setHolidayList] = useState([]);
 
@@ -34,23 +36,31 @@ export default function HolidayPickerModal({
       console.log(data);
       setHolidayList(data);
     }
-    // getHolidays();
+    getHolidays();
   }, [selectedMonth]);
 
   useEffect(() => {
     ReactModal.setAppElement("body");
   }, []);
 
+  function handleSelect(selectedHolidayIndex) {
+    setSelectedHolidayName(holidayList[selectedHolidayIndex].name);
+    setIsModalOpen(false);
+  }
+
   return (
     <ReactModal isOpen={isModalOpen} style={modalStyles}>
-      <div>Pick a Holiday:</div>
+      <div className="Modal-TitleBar">Pick a Holiday</div>
       {holidayList.length > 0 &&
         holidayList.map((holiday, index) => (
-          <div key={index}>
+          <div
+            key={index}
+            className="Modal-TableRow"
+            onClick={() => handleSelect(index)}
+          >
             {holiday.date}: {holiday.name}
           </div>
         ))}
-      <button onClick={() => setIsModalOpen(false)}>Close</button>
     </ReactModal>
   );
 }
