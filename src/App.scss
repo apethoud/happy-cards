@@ -78,9 +78,18 @@ body {
 
 .Modal-TitleBar {
   padding: 16px;
+  border-bottom: 4px solid darkturquoise;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Modal-Title {
   font-size: 18px;
   font-weight: 700;
-  border-bottom: 4px solid darkturquoise;
+}
+
+.Modal-CloseButtonWrapper {
+  padding: 4px;
 }
 
 .Modal-Section {

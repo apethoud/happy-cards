@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import ReactModal from "react-modal";
 import _ from "lodash";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const API_KEY = process.env.REACT_APP_HOLIDAYS_API_KEY;
 
@@ -51,6 +53,10 @@ export default function HolidayPickerModal({
 
   function handleSelect(selectedHolidayName) {
     setSelectedHolidayName(selectedHolidayName);
+    handleCloseModal();
+  }
+
+  function handleCloseModal() {
     setIsModalOpen(false);
     setSearchTerm("");
   }
@@ -63,7 +69,15 @@ export default function HolidayPickerModal({
 
   return (
     <ReactModal isOpen={isModalOpen} style={modalStyles}>
-      <div className="Modal-TitleBar">Pick a Holiday</div>
+      <div className="Modal-TitleBar">
+        <div className="Modal-Title">Pick a Holiday</div>
+        <div
+          className="Modal-CloseButtonWrapper"
+          onClick={() => handleCloseModal()}
+        >
+          <FontAwesomeIcon icon={faXmark} size="lg" />
+        </div>
+      </div>
       <div className="Modal-Section" style={{ display: "flex" }}>
         <input
           name="search"
