@@ -4,6 +4,20 @@ import { getMonthNumberByMonthName } from "./utils";
 
 const API_KEY = process.env.REACT_APP_HOLIDAYS_API_KEY;
 
+const modalStyles = {
+  overlay: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  content: {
+    position: "relative",
+    width: 800,
+    height: 600,
+    inset: 0,
+  },
+};
+
 export default function HolidayPickerModal({
   isModalOpen,
   setIsModalOpen,
@@ -20,7 +34,7 @@ export default function HolidayPickerModal({
       console.log(data);
       setHolidayList(data);
     }
-    getHolidays();
+    // getHolidays();
   }, [selectedMonth]);
 
   useEffect(() => {
@@ -28,7 +42,7 @@ export default function HolidayPickerModal({
   }, []);
 
   return (
-    <ReactModal isOpen={isModalOpen}>
+    <ReactModal isOpen={isModalOpen} style={modalStyles}>
       <div>Pick a Holiday:</div>
       {holidayList.length > 0 &&
         holidayList.map((holiday, index) => (
