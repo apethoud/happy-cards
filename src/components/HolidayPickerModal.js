@@ -26,6 +26,7 @@ export default function HolidayPickerModal({
 }) {
   const [selectedTimeframe, setSelectedTimeframe] = useState("this_month");
   const [holidayList, setHolidayList] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     async function getHolidays() {
@@ -57,6 +58,15 @@ export default function HolidayPickerModal({
     <ReactModal isOpen={isModalOpen} style={modalStyles}>
       <div className="Modal-TitleBar">Pick a Holiday</div>
       <div className="Modal-Section" style={{ display: "flex" }}>
+        <input
+          name="search"
+          type="text"
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
+          className="Input"
+          style={{ marginRight: 16 }}
+          placeholder="Search..."
+        />
         <button
           className={`Button${
             selectedTimeframe === "this_month" ? " Selected" : ""
