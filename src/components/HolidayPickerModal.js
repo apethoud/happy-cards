@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import ReactModal from "react-modal";
+import _ from "lodash";
 
 const API_KEY = process.env.REACT_APP_HOLIDAYS_API_KEY;
-const timeframeOptions = ["this_month", "this_year"];
 
 const modalStyles = {
   overlay: {
@@ -49,9 +49,16 @@ export default function HolidayPickerModal({
     ReactModal.setAppElement("body");
   }, []);
 
-  function handleSelect(selectedHolidayIndex) {
-    setSelectedHolidayName(holidayList[selectedHolidayIndex].name);
+  function handleSelect(selectedHolidayName) {
+    setSelectedHolidayName(selectedHolidayName);
     setIsModalOpen(false);
+    setSearchTerm("");
+  }
+
+  function getFilteredHolidayList() {
+    return _.filter(holidayList, (holiday) => {
+      return holiday.name.includes(searchTerm);
+    });
   }
 
   return (
@@ -84,15 +91,15 @@ export default function HolidayPickerModal({
           This Year
         </button>
         <div style={{ padding: 8, fontStyle: "italic" }}>
-          ({holidayList.length} options)
+          ({getFilteredHolidayList().length} options)
         </div>
       </div>
       {holidayList.length > 0 &&
-        holidayList.map((holiday, index) => (
+        getFilteredHolidayList().map((holiday, index) => (
           <div
             key={index}
             className="Modal-TableRow"
-            onClick={() => handleSelect(index)}
+            onClick={() => handleSelect(holiday.name)}
           >
             {holiday.date}: {holiday.name}
           </div>
