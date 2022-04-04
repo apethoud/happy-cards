@@ -83,9 +83,28 @@ body {
   border-bottom: 4px solid darkturquoise;
 }
 
+.Modal-Section {
+  padding: 16px;
+}
+
 .Modal-TableRow {
   padding: 16px;
   font-size: 16px;
   border-bottom: 1px solid #ccc;
   cursor: pointer;
+}
+
+// Form Elements
+
+.Button {
+  padding: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+
+  &.Selected {
+    background-color: #ccc;
+  }
 }

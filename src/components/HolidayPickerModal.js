@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import ReactModal from "react-modal";
-import { getMonthNumberByMonthName } from "./utils";
 
 const API_KEY = process.env.REACT_APP_HOLIDAYS_API_KEY;
+const timeframeOptions = ["this_month", "this_year"];
 
 const modalStyles = {
   overlay: {
@@ -22,22 +22,27 @@ const modalStyles = {
 export default function HolidayPickerModal({
   isModalOpen,
   setIsModalOpen,
-  selectedMonth,
   setSelectedHolidayName,
 }) {
+  const [selectedTimeframe, setSelectedTimeframe] = useState("this_month");
   const [holidayList, setHolidayList] = useState([]);
 
   useEffect(() => {
     async function getHolidays() {
-      let monthParam = getMonthNumberByMonthName(selectedMonth);
-      const url = `https://holidays.abstractapi.com/v1/?api_key=${API_KEY}&country=US&year=2022&month=${monthParam}`;
+      let params;
+      if (selectedTimeframe === "this_year") {
+        params = "year=2022";
+      } else {
+        params = "year=2022&month=4";
+      }
+      const url = `https://holidays.abstractapi.com/v1/?api_key=${API_KEY}&country=US&${params}`;
       const response = await fetch(url);
       const data = await response.json();
       console.log(data);
       setHolidayList(data);
     }
-    getHolidays();
-  }, [selectedMonth]);
+    // getHolidays();
+  }, [selectedTimeframe]);
 
   useEffect(() => {
     ReactModal.setAppElement("body");
@@ -51,6 +56,27 @@ export default function HolidayPickerModal({
   return (
     <ReactModal isOpen={isModalOpen} style={modalStyles}>
       <div className="Modal-TitleBar">Pick a Holiday</div>
+      <div className="Modal-Section" style={{ display: "flex" }}>
+        <button
+          className={`Button${
+            selectedTimeframe === "this_month" ? " Selected" : ""
+          }`}
+          onClick={() => setSelectedTimeframe("this_month")}
+        >
+          This Month
+        </button>
+        <button
+          className={`Button${
+            selectedTimeframe === "this_year" ? " Selected" : ""
+          }`}
+          onClick={() => setSelectedTimeframe("this_year")}
+        >
+          This Year
+        </button>
+        <div style={{ padding: 8, fontStyle: "italic" }}>
+          ({holidayList.length} options)
+        </div>
+      </div>
       {holidayList.length > 0 &&
         holidayList.map((holiday, index) => (
           <div
