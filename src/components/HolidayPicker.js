@@ -12,10 +12,14 @@ export default function HolidayPicker() {
         {selectedHolidayName ? (
           <>
             <div>{selectedHolidayName}</div>
-            <button onClick={() => setIsModalOpen(true)}>Edit</button>
+            <button className="Button" onClick={() => setIsModalOpen(true)}>
+              Edit
+            </button>
           </>
         ) : (
-          <button onClick={() => setIsModalOpen(true)}>Choose</button>
+          <button className="Button" onClick={() => setIsModalOpen(true)}>
+            Choose
+          </button>
         )}
       </div>
       <HolidayPickerModal
