@@ -44,7 +44,7 @@ export default function HolidayPickerModal({
       console.log(data);
       setHolidayList(data);
     }
-    // getHolidays();
+    getHolidays();
   }, [selectedTimeframe]);
 
   useEffect(() => {
