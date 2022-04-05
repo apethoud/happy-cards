@@ -1,4 +1,5 @@
 import CardForm from "./CardForm";
+import CardPreview from "./CardPreview";
 
 export default function CardBuilder() {
   return (
@@ -6,7 +7,9 @@ export default function CardBuilder() {
       <div className="CardForm-Wrapper">
         <CardForm />
       </div>
-      {/* <CardPreview /> */}
+      <div className="CardPreview-Wrapper">
+        <CardPreview />
+      </div>
     </div>
   );
 }
