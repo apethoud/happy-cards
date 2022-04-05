@@ -1,6 +1,6 @@
 import "./App.scss";
 import HeaderFooter from "./components/HeaderFooter";
-import HolidayPicker from "./components/HolidayPicker";
+import CardBuilder from "./components/CardBuilder";
 import Home from "./components/Home";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
       <HeaderFooter>
         {/* <Home /> */}
-        <HolidayPicker />
+        <CardBuilder />
       </HeaderFooter>
     </>
   );

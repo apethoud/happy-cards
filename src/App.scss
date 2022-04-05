@@ -47,8 +47,6 @@ body {
   width: 60vw;
 }
 
-// HighlightCard
-
 .HighlightCard {
   display: flex;
   flex-direction: column;
@@ -72,4 +70,71 @@ body {
 
 .HighlightCard-Subtext {
   color: #333;
+}
+
+// Card Builder
+
+.CardForm-Wrapper {
+  margin: 32px;
+}
+
+.Modal-TitleBar {
+  padding: 16px;
+  border-bottom: 4px solid darkturquoise;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Modal-Title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.Modal-CloseButtonWrapper {
+  padding: 4px;
+}
+
+.Modal-Section {
+  padding: 16px;
+}
+
+.Modal-TableRow {
+  padding: 16px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+// Form Elements
+
+.Button {
+  padding: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+
+  &.Selected {
+    background-color: #ccc;
+  }
+}
+
+.Form-InputWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+  width: 200px;
+}
+
+.Label {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.Input {
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 16px;
 }
