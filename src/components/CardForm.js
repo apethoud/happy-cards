@@ -2,14 +2,20 @@ import { useState, useRef } from "react";
 import HolidayPickerModal from "./HolidayPickerModal";
 import LabeledTextInput from "./LabeledTextInput";
 
-export default function CardForm() {
+export default function CardForm(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [recipientName, setRecipientName] = useState("");
   const [recipientEmail, setRecipientEmail] = useState("");
-  const [selectedHolidayName, setSelectedHolidayName] = useState("");
-  const [senderName, setSenderName] = useState("");
   const [senderEmail, setSenderEmail] = useState("");
   // const exampleRef = useRef();
+
+  const {
+    recipientName,
+    setRecipientName,
+    selectedHolidayName,
+    setSelectedHolidayName,
+    senderName,
+    setSenderName,
+  } = props;
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -44,7 +50,7 @@ export default function CardForm() {
               <div style={{ display: "flex" }}>
                 <div style={{ marginRight: 16 }}>{selectedHolidayName}</div>
                 <div
-                  style={{ color: "#007d80" }}
+                  style={{ color: "#007d80", cursor: "pointer" }}
                   onClick={() => setIsModalOpen(true)}
                 >
                   Edit
