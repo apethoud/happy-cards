@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import HolidayPickerModal from "./HolidayPickerModal";
 import LabeledTextInput from "./LabeledTextInput";
 
@@ -9,6 +9,7 @@ export default function CardForm() {
   const [selectedHolidayName, setSelectedHolidayName] = useState("");
   const [senderName, setSenderName] = useState("");
   const [senderEmail, setSenderEmail] = useState("");
+  // const exampleRef = useRef();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -20,6 +21,7 @@ export default function CardForm() {
       senderEmail,
     };
     console.log("payload is: ", payload);
+    // console.log("exampleRef.current.value is: ", exampleRef.current.value);
   }
 
   return (
@@ -68,6 +70,12 @@ export default function CardForm() {
             value={senderEmail}
             setValue={setSenderEmail}
           />
+          {/* <div>
+            <label htmlFor="exampleRef">
+              Uncontrolled Input Example (using useRef())
+            </label>
+            <input name="exampleRef" type="text" ref={exampleRef} />
+          </div> */}
           <button type="submit" className="Button">
             Submit
           </button>
