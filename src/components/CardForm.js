@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import HolidayPickerModal from "./HolidayPickerModal";
 import LabeledTextInput from "./LabeledTextInput";
+import { Button } from "./StyledComponents";
 
 export default function CardForm(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -57,13 +58,9 @@ export default function CardForm(props) {
                 </div>
               </div>
             ) : (
-              <button
-                className="Button"
-                type="button"
-                onClick={() => setIsModalOpen(true)}
-              >
+              <Button type="button" onClick={() => setIsModalOpen(true)}>
                 Choose
-              </button>
+              </Button>
             )}
           </div>
           <LabeledTextInput
@@ -82,9 +79,7 @@ export default function CardForm(props) {
             </label>
             <input name="exampleRef" type="text" ref={exampleRef} />
           </div> */}
-          <button type="submit" className="Button">
-            Submit
-          </button>
+          <Button type="submit">Submit</Button>
         </form>
       </div>
       <HolidayPickerModal

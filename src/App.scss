@@ -115,19 +115,6 @@ body {
 
 // Form Elements
 
-.Button {
-  padding: 8px;
-  font-size: 16px;
-  font-weight: 700;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  cursor: pointer;
-
-  &.Selected {
-    background-color: #ccc;
-  }
-}
-
 .Form-InputWrapper {
   display: flex;
   flex-direction: column;

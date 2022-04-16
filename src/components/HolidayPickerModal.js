@@ -3,6 +3,7 @@ import ReactModal from "react-modal";
 import _ from "lodash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "./StyledComponents";
 
 const API_KEY = process.env.REACT_APP_HOLIDAYS_API_KEY;
 
@@ -88,22 +89,18 @@ export default function HolidayPickerModal({
           style={{ marginRight: 16 }}
           placeholder="Search..."
         />
-        <button
-          className={`Button${
-            selectedTimeframe === "this_month" ? " Selected" : ""
-          }`}
+        <Button
+          selected={selectedTimeframe === "this_month"}
           onClick={() => setSelectedTimeframe("this_month")}
         >
           This Month
-        </button>
-        <button
-          className={`Button${
-            selectedTimeframe === "this_year" ? " Selected" : ""
-          }`}
+        </Button>
+        <Button
+          selected={selectedTimeframe === "this_year"}
           onClick={() => setSelectedTimeframe("this_year")}
         >
           This Year
-        </button>
+        </Button>
         <div style={{ padding: 8, fontStyle: "italic" }}>
           ({getFilteredHolidayList().length} options)
         </div>
