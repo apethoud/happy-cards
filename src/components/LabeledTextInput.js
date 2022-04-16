@@ -1,9 +1,9 @@
+import { Label } from "./StyledComponents";
+
 export default function LabeledTextInput({ name, value, setValue }) {
   return (
     <div className="Form-InputWrapper">
-      <label className="Label" htmlFor={name}>
-        {name}
-      </label>
+      <Label htmlFor={name}>{name}</Label>
       <input
         className="Input"
         name={name}

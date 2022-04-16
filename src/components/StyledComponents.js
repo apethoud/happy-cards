@@ -8,3 +8,9 @@ export const Button = styled.button`
   background-color: ${(props) => (props.selected ? "#ccc" : "#fff")};
   cursor: pointer;
 `;
+
+export const Label = styled.label`
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+`;
