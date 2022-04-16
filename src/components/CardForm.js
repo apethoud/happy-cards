@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import HolidayPickerModal from "./HolidayPickerModal";
 import LabeledTextInput from "./LabeledTextInput";
-import { Button, Label } from "./StyledComponents";
+import { Button, Label, Input } from "./StyledComponents";
 
 export default function CardForm(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -77,7 +77,7 @@ export default function CardForm(props) {
             <Label htmlFor="exampleRef">
               Uncontrolled Input Example (using useRef())
             </Label>
-            <input name="exampleRef" type="text" ref={exampleRef} />
+            <Input name="exampleRef" type="text" ref={exampleRef} />
           </div> */}
           <Button type="submit">Submit</Button>
         </form>

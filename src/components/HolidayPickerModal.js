@@ -3,7 +3,7 @@ import ReactModal from "react-modal";
 import _ from "lodash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { Button } from "./StyledComponents";
+import { Button, Input } from "./StyledComponents";
 
 const API_KEY = process.env.REACT_APP_HOLIDAYS_API_KEY;
 
@@ -80,12 +80,11 @@ export default function HolidayPickerModal({
         </div>
       </div>
       <div className="Modal-Section" style={{ display: "flex" }}>
-        <input
+        <Input
           name="search"
           type="text"
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
-          className="Input"
           style={{ marginRight: 16 }}
           placeholder="Search..."
         />
