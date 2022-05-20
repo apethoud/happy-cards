@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+export const AppBackground = styled.div`
+  ${(props) =>
+    props.theme.theme === "dark"
+      ? `
+      background-color: #222;
+    `
+      : `
+      background-color: #fff;
+    `}
+`;
+
 export const Button = styled.button`
   padding: 8px;
   font-size: 16px;

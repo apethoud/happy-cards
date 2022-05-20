@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
 
 const ThemeContext = createContext("dark");
 
@@ -10,7 +11,9 @@ const ThemeProvider = (props) => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {props.children}
+      <StyledThemeProvider theme={{ theme }}>
+        {props.children}
+      </StyledThemeProvider>
     </ThemeContext.Provider>
   );
 };
