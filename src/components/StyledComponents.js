@@ -4,7 +4,7 @@ export const AppBackground = styled.div`
   ${(props) =>
     props.theme.theme === "dark"
       ? `
-      background-color: #222;
+      background-color: #333;
     `
       : `
       background-color: #fff;
@@ -24,10 +24,27 @@ export const Label = styled.label`
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
+  ${(props) =>
+    props.theme.theme === "dark"
+      ? `
+      color: #aaa;
+    `
+      : `
+      color: #000;
+    `}
 `;
 
 export const Input = styled.input`
-  border: 1px solid #ccc;
   padding: 8px;
   font-size: 16px;
+  ${(props) =>
+    props.theme.theme === "dark"
+      ? `
+      background-color: #222;
+      border: 1px solid #777;
+    `
+      : `
+      background-color: #fff;
+      border: 1px solid #ccc;
+    `}
 `;
